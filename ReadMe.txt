@@ -9,3 +9,5 @@ The money need to be positive integer, and the number you bet need to between 1-
 The web applicaiton will do a data validation for the money and bet.
 
 Enjoy the game!
+
+https://shufan-application-1.herokuapp.com/
