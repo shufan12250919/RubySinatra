@@ -1,0 +1,57 @@
+<div class="box">
+	<form action="/bet" method='post'>
+		<div class="Data-Content">
+			<label id= "head" for="txt_name">place your bet on dice number (1 to 6)</label><br />
+		    <div class="Data-Title">
+		        <label for="txt_bet">bet Money</label><br />
+		        <label for="txt_on">on</label><br />
+			</div>
+			<div class="Data-Items">
+		        <input type="text" id="bet" name="money" value="<%= @defalutMoney %>"/><br />
+		        <input type="text" id="on" name="place" value="<%= @defalutPlace %>" /><br />
+		        <input id="login" type='submit' name='bet' value="bet"> </input>
+		    </div>
+		    <div>
+		    	<label ><%= @dice %></label><br />
+		    	<label ><%= @result %></label><br />
+		    </div>
+		</div>
+	</form>
+
+	<form class="current">
+		<div class="Display">
+		        <label >total win</label><br />
+		        <input type="text" id="tw" value="<%= session[:win]%>" readonly/><br />
+		        <label >total loss</label><br />
+		        <input type="text" id="tl" value="<%= session[:lose]%>" readonly/><br />
+		        <label >total profit</label><br />
+		        <input type="text" id="tp" value="<%= session[:profit]%>" readonly/><br />
+		</div>
+	</form>
+</div>
+
+<div class = out>
+	<form action="/logout" class="total" method="post">
+
+		<label id= "account" for="txt_account">account</label><br />
+
+		<div class="Display_total">
+			<div>
+		        <label>total win</label><br />
+		        <input type="text" id="tw" value="<%= session[:player].win + session[:win]%>"/><br />
+		    </div>
+		    <div>
+		        <label>total loss</label><br />
+		        <input type="text" id="tl" value="<%= session[:player].lose + session[:lose]%>"/><br />
+		    </div>
+		    <div>
+		        <label>total profit</label><br />
+		        <input type="text" id="tp" value="<%= session[:player].profit + session[:profit]%>"/><br />
+		    </div>
+		</div>
+
+		<input id="logout" type='submit' name='logout' value="Logout"> </input>
+
+	</form>
+</div>
+
